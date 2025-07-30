@@ -14,3 +14,7 @@ variable "route_destination_cidr" {
   default     = "0.0.0.0/0"
 }
 
+variable "availability_zone" {
+    type = string
+    default = "eu-west-2"
+}

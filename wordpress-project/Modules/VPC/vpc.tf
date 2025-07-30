@@ -1,5 +1,7 @@
 resource "aws_vpc" "VPC" {
   cidr_block = var.vpc_cidr
+  enable_dns_hostnames = true
+  enable_dns_support = true
   
   tags = {
     Name = "wordpress-VPC"
@@ -9,6 +11,8 @@ resource "aws_vpc" "VPC" {
 resource "aws_subnet" "pb-subnet" {
   vpc_id     = aws_vpc.VPC.id
   cidr_block = var.subnet_cidr
+  map_public_ip_on_launch = true
+  availability_zone = var.availability_zone
 
   tags = {
     Name = "public-subnet"
