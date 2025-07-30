@@ -14,3 +14,6 @@ variable "availability_zone" {
 
 # EC2 Variables
 
+variable "instance_type" {
+    type = string
+}
